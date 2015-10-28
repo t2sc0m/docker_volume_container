@@ -12,6 +12,12 @@ Debian
 ```
 
 ## USAGE
+### Start Volume Container
 ```shell
-$ sudo docker run -i -t --volumes-from adite/volume_container -v ${local_directory}:/data
+$ sudo docker run -d -name av adite/volume_container:v1 -v ${local_share_directory}:/data
+```
+
+### Use Volume Container
+```shell
+$ sudo docker run -d --volumes-from av ${container_name}
 ```
